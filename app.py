@@ -2,7 +2,7 @@ import csv
 import random
 from simple_slack_bot.simple_slack_bot import SimpleSlackBot
 
-simple_slack_bot = SimpleSlackBot()
+simple_slack_bot = SimpleSlackBot(debug=True)
 
 # character's name will be the key while the value will a list of all their lines
 character_lines = {}
