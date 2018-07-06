@@ -13,11 +13,13 @@ def office_callback(request):
     """Our callback which is called every time a new message is sent by a user
     :param request: the request object that came with the message event
     """
-    for token in request.message.split(' '):
-        if token.lower() in character_lines:
-            character_name = token.lower()
-            random_index = random.randint(0, len(character_lines[character_name]))
-            request.write(character_name.capitalize() + ": " + character_lines[character_name][random_index])
+
+    if request.message is not None:
+        for token in request.message.split(' '):
+            if token.lower() in character_lines:
+                character_name = token.lower()
+                random_index = random.randint(0, len(character_lines[character_name]) - 1)
+                request.write(character_name.capitalize() + ": " + character_lines[character_name][random_index])
 
 
 def read_in_characters_lines():
