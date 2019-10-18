@@ -7,5 +7,5 @@ simple-slack-bot==1.1.0
 six==1.11.0
 slacker==0.9.60
 slacksocket==0.9.1
-urllib3==1.22
+urllib3==1.24.2
 websocket-client==0.47.0
